@@ -27,7 +27,7 @@
 		// $_SESSION['client']=$row_client['client_id'];
 		// echo 'true';
 		
-		// mysqli_query("insert into user_log (username,login_date,client_id)values('$username',NOW(),".$row_client['client_id'].")")or die(mysqli_error());
+		mysqli_query($koneksi,"insert into user_log (username,login_date,client_id)values('$username',NOW(),".$row_client['client_id'].")")or die(mysqli_error());
 		
 		//  }else{ 
 		// 		echo 'false';
