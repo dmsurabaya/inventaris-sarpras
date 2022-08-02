@@ -19,27 +19,27 @@
 						jQuery("#login_form1").submit(function(e){
 								e.preventDefault();
 								var formData = jQuery(this).serialize();
-								// $.ajax({
-								// 	type: "POST",
-								// 	url: "login.php",
-								// 	data: formData,
-								// 	success: function(html){
-								// 	if(html=='true_admin'){
-								// 	$.jGrowl("Loading File Please Wait......", { sticky: true });
-								// 	$.jGrowl("Welcome to Technonlogy Resource Inventory System (T.R.S.)", { header: 'Access Granted' });
-								// 	var delay = 1000;
-								// 		setTimeout(function(){ window.location = 'admin/dashboard.php'  }, delay);  
-								// 	}
-								// 	//else if (html == 'true'){
-								// 	// 	$.jGrowl("Welcome to Technonlogy Resource Inventory System (T.R.S.)", { header: 'Access Granted' });
-								// 	// var delay = 1000;
-								// 	// 	setTimeout(function(){ window.location = 'technical Staff/dashboard_client.php'  }, delay);  
-								// 	// }
-								// 	else{
-								// 	$.jGrowl("Please Check your username and Password", { header: 'Login Failed' });
-								// 	}
-								// 	}
-								// });
+								$.ajax({
+									type: "POST",
+									url: "login.php",
+									data: formData,
+									success: function(html){
+									if(html=='true_admin'){
+										$.jGrowl("Loading File Please Wait......", { sticky: true });
+										$.jGrowl("Welcome to Technonlogy Resource Inventory System (T.R.S.)", { header: 'Access Granted' });
+										var delay = 1000;
+										setTimeout(function(){ window.location = 'admin/dashboard.php'  }, delay);  
+									}
+									else if (html == 'true'){
+										$.jGrowl("Welcome to Technonlogy Resource Inventory System (T.R.S.)", { header: 'Access Granted' });
+										var delay = 1000;
+										setTimeout(function(){ window.location = 'technical Staff/dashboard_client.php'  }, delay);  
+									}
+									else{
+										$.jGrowl("Please Check your username and Password", { header: 'Login Failed' });
+									}
+									}
+								});
 								
 								return false;
 							});
